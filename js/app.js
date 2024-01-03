@@ -34,7 +34,7 @@ class Game {
     }
 
     checkIfPlayerHasWon() {
-        if(this.activePlayer.bank >= 10) {
+        if(this.activePlayer.bank >= 100) {
             this.resetScores()
             alert(this.activePlayer.html.name.innerText + " a gagné !")
             let action = confirm("Voulez-vous recommencer ?")
