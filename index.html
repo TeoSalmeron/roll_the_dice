@@ -10,42 +10,70 @@
     <div class="container">
         <h1>Roll the Dice !</h1>
         <div class="game">
-            <button type="button" class="rules">règles</button>
+            <div class="buttons">
+                <button type="button" class="rules-btn" id="rulesBtn">règles</button>
+                <button type="button" class="new-game-btn" id="newGameBtn">nouvelle partie</button>
+            </div>
             <div class="upper">
 
             </div>
             <div class="game-content">
                 <div class="player player-1">
-                    <div class="player-name">
-                        <h2 id="playerOneName">Joueur 1</h2>
+                    <div class="player-name" id="playerOneName">
+                        Joueur 1
                     </div>
-                    <div class="player-score">
-                        <p id="playerOneScore">45</p>
+                    <div class="player-score" id="playerOneScore">
+                        0
                     </div>
-                    <div class="player-bank">
-                        <p id="playerOneBank">11</p>
+                    <div class="player-bank" id="playerOneBank">
+                        0
                     </div>
                 </div>
                 <div class="tool-bar">
-                    <button type="button" class="hold">
+                    <button type="button" class="hold" id="hold" disabled>
                         <img src="/img/hold.png" alt="retenir le score">
                     </button>
-                    <div class="dice"></div>
-                    <button type="button" class="roll">
+                    <div class="dice" id="dice">
+                        <img src="/img/dice_1.png" alt="dé" id="diceImg">
+                    </div>
+                    <button type="button" class="roll" id="roll" disabled>
                         <img src="/img/roll.png" alt="lancer le dé">
                     </button>
                 </div>
                 <div class="player player-2">
-                    <div class="player-name">
-                        <h2 id="playerOneName">Joueur 2</h2>
+                    <div class="player-name" id="playerTwoName">
+                        Joueur 2
                     </div>
-                    <div class="player-score">
-                        <p id="playerOneScore">76</p>
+                    <div class="player-score" id="playerTwoScore">
+                        0
                     </div>
-                    <div class="player-bank">
-                        <p id="playerOneBank">11</p>
+                    <div class="player-bank" id="playerTwoBank">
+                        0
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="rules" id="rules">
+            <button type="button" id="closeRules">X</button>
+            <h2>Règles</h2>
+            <div class="rules-content">
+                <p>Chaque joueur possède un score temporaire (ROUND) et un score global (GLOBAL)</p>
+                <p>
+                    À chaque tour, le joueur a son ROUND initialisé à 0 et peut lancer un dé autant de fois qu'il le souhaite. Le
+                    résultat d'un lancer est ajouté au ROUND.
+                </p>
+                <p>
+                    Lors de son tour, le joueur peut décider à tout moment de :
+                </p>
+                <ul>
+                    <li>
+                        - Cliquer sur l'option "Retenir", qui permet d'envoyer les points du ROUND vers le GLOBAL. Ce sera alors le tour du prochain joueur.
+                    </li>
+                    <li>
+                        - Lancer le dé. S'il obtient un 1, son score ROUND est perdu et c'est la fin de son tour. Le premier joueur qui atteint les 100 points sur GLOBAL gagne le jeu.
+                    </li>
+                </ul>
+                <p>Bonne chance !</p>
             </div>
         </div>
     </div>

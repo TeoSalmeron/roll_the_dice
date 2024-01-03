@@ -27,7 +27,7 @@ html, body {
 
 .container {
   width: 100%;
-  height: 100%;
+  height: auto;
   background: rgb(125, 79, 254);
   background: linear-gradient(0deg, rgb(125, 79, 254) 0%, rgb(196, 159, 255) 100%);
   display: grid;
@@ -35,6 +35,8 @@ html, body {
   grid-template-rows: 100px 1fr;
   justify-items: center;
   align-items: center;
+  position: relative;
+  padding: 5vw;
 }
 
 h1 {
@@ -51,11 +53,24 @@ h1 {
   border-radius: 10px;
   width: 90%;
   height: 95%;
+  min-height: 600px;
   background: #fff;
   position: relative;
   grid-row: 2/3;
 }
-.game .rules {
+.game .buttons {
+  position: absolute;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 5;
+}
+.game .buttons button {
+  width: 100%;
   font-family: "Lato", sans-serif;
   text-transform: uppercase;
   background: #FF9CB6;
@@ -63,16 +78,19 @@ h1 {
   border: none;
   font-size: 1.2rem;
   padding: 10px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 20px;
   transition: 0.3s cubic-bezier(0.19, 1, 0.22, 1);
-  z-index: 3;
 }
-.game .rules:hover {
+.game .buttons button:hover {
   cursor: pointer;
   background: #C49FFF;
+}
+.game .buttons .rules-btn {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.game .buttons .new-game-btn {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .game .upper {
   border-top-left-radius: 10px;
@@ -103,9 +121,12 @@ h1 {
   justify-items: center;
   align-items: center;
 }
+.player .player-name, .player .player-score, .player .player-bank {
+  transition: 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
 .player .player-name {
   font-family: "Lobster", sans-serif;
-  font-size: 1.4rem;
+  font-size: 2.3rem;
   color: #FF9CB6;
   grid-row: 2/3;
 }
@@ -118,15 +139,15 @@ h1 {
 .player .player-bank {
   font-family: "Lato", sans-serif;
   color: #fff;
-  background: rgb(255, 156, 182);
-  background: radial-gradient(circle, rgb(255, 156, 182) 0%, rgb(222, 137, 159) 100%);
+  background: #FF9CB6;
   font-size: 2rem;
   grid-row: 3/4;
-  padding: 20px;
+  padding: 15px;
 }
 
 .tool-bar {
   position: absolute;
+  z-index: 5;
   top: 50%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
@@ -142,10 +163,14 @@ h1 {
 .tool-bar .dice {
   width: 80px;
   height: 80px;
-  background: url("/img/dice_1.png");
-  background-position: center;
-  background-size: cover;
   box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tool-bar .dice img {
+  width: 100%;
+  height: 100%;
 }
 .tool-bar button {
   border: none;
@@ -165,4 +190,54 @@ h1 {
 }
 .tool-bar .hold {
   padding: 10px;
+}
+
+.rules {
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: -100vw;
+  top: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 6;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 20% 80%;
+  padding: 7vw;
+  color: #fff;
+  transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.rules button {
+  font-family: "Lato", sans-serif;
+  background: none;
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  position: absolute;
+  right: 7vw;
+  top: 7vw;
+  transition: 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.rules button:hover {
+  color: #C49FFF;
+  cursor: pointer;
+}
+.rules h2 {
+  font-family: "Lobster", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 25px;
+  text-align: center;
+}
+.rules .rules-content {
+  height: 100%;
+  overflow-y: scroll;
+  text-align: center;
+}
+.rules .rules-content p, .rules .rules-content ul, .rules .rules-content li {
+  font-family: "Lato", sans-serif;
+  margin: 10px 0px;
+  font-size: 1.3rem;
 }/*# sourceMappingURL=style.css.map */
