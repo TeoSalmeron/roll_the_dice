@@ -199,25 +199,25 @@ let number = function(min, max) {
 function returnDiceImage(diceValue) {
     switch(diceValue) {
         case 1:
-            return "/img/dice_1.png"
+            return "img/dice_1.png"
             break
         case 2:
-            return "/img/dice_2.png"
+            return "img/dice_2.png"
             break
         case 3:
-            return "/img/dice_3.png"
+            return "img/dice_3.png"
             break
         case 4:
-            return "/img/dice_4.png"
+            return "img/dice_4.png"
             break
         case 5:
-            return "/img/dice_5.png"
+            return "img/dice_5.png"
             break
         case 6:
-            return "/img/dice_6.png"
+            return "img/dice_6.png"
             break
         default:
-            return "/img/dice_1.png"
+            return "img/dice_1.png"
             break
     }
 }
