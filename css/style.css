@@ -55,13 +55,32 @@ h1 {
   position: relative;
   grid-row: 2/3;
 }
+.game .rules {
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+  background: #FF9CB6;
+  color: #fff;
+  border: none;
+  font-size: 1.2rem;
+  padding: 10px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20px;
+  transition: 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  z-index: 3;
+}
+.game .rules:hover {
+  cursor: pointer;
+  background: #C49FFF;
+}
 .game .upper {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   width: 100%;
   height: 50%;
   background: rgb(217, 217, 217);
-  background: linear-gradient(0deg, rgb(227, 227, 227) 0%, rgb(255, 255, 255) 100%);
+  background: linear-gradient(0deg, rgb(233, 233, 233) 0%, rgb(255, 255, 255) 100%);
 }
 .game .game-content {
   width: 100%;
@@ -104,20 +123,46 @@ h1 {
   font-size: 2rem;
   grid-row: 3/4;
   padding: 20px;
-  border-radius: 50%;
 }
 
 .tool-bar {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  max-width: 400px;
+  align-items: center;
+}
+.tool-bar .dice, .tool-bar button {
+  transition: 0.3s cubic-bezier(0.19, 1, 0.22, 1);
 }
 .tool-bar .dice {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
+  background: url("/img/dice_1.png");
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.16);
+}
+.tool-bar button {
+  border: none;
   background: #fff;
-  border: 2px solid #FF9CB6;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.16);
+  padding: 5px;
+}
+.tool-bar button:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+.tool-bar button img {
+  width: 100%;
+}
+.tool-bar .hold {
+  padding: 10px;
 }/*# sourceMappingURL=style.css.map */
